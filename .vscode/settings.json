@@ -3,5 +3,18 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "xaver.clang-format",
     "cmake.generator": "Unix Makefiles",
-    "clang-format.executable": "clang-format-13"
+    "clang-format.executable": "clang-format-13",
+    "files.associations": {
+        "*.tcc": "cpp",
+        "optional": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "variant": "cpp"
+    }
 }
