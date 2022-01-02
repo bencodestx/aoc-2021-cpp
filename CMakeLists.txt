@@ -5,11 +5,10 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -pedantic")
 
+enable_testing()
+include(GoogleTest)
+
 add_subdirectory(lib)
 add_subdirectory(src)
 
 add_subdirectory(vendor/googletest)
-
-enable_testing()
-
-add_subdirectory(test)
