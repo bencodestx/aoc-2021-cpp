@@ -5,7 +5,7 @@
 
 namespace aoc2021::day1 {
 auto part1(auto &in) {
-  auto values = read_vector<int>(in);
+  const auto values = read_vector<int>(in);
   return count_increases_over_window<1>(values);
 }
 } // namespace aoc2021::day1
