@@ -1,5 +1,5 @@
-add_executable(day1_tests day1.cpp)
-target_link_libraries(day1_tests gtest gtest_main)
+add_executable(day1_tests day1_tests.cpp)
+target_link_libraries(day1_tests aoc2021 gtest gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(day1_tests)

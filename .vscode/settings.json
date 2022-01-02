@@ -2,5 +2,6 @@
     "cmake.buildDirectory": "${workspaceFolder}/.build-${buildType}",
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "xaver.clang-format",
-    "cmake.generator": "Unix Makefiles"
+    "cmake.generator": "Unix Makefiles",
+    "clang-format.executable": "clang-format-13"
 }
