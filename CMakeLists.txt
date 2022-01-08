@@ -12,3 +12,4 @@ add_subdirectory(lib)
 add_subdirectory(src)
 
 add_subdirectory(vendor/googletest)
+add_subdirectory(vendor/range-v3)
