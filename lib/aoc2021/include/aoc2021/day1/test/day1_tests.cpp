@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 
-#include "aoc2021/day1.hpp"
+#include "aoc2021/day1/part1.hpp"
+#include "aoc2021/day1/part2.hpp"
 
 // As the submarine drops below the surface of the ocean, it automatically
 // performs a sonar sweep of the nearby sea floor. On a small screen, the sonar

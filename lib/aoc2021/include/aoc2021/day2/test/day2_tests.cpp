@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 
-#include "aoc2021/day2.hpp"
+#include "aoc2021/day2/part1.hpp"
+#include "aoc2021/day2/part2.hpp"
 
 static constexpr auto sample = R"(forward 5
 down 5
