@@ -18,4 +18,8 @@ add_executable(day3_part1 day3_part1.cpp)
 target_link_libraries(day3_part1 PRIVATE aoc2021)
 add_custom_command(OUTPUT day3_part1.txt COMMAND ./day3_part1 >day3_part1.txt <${CMAKE_SOURCE_DIR}/data/day3.txt DEPENDS day3_part1)
 
-add_custom_target(answers ALL DEPENDS day1_part1.txt day1_part2.txt day2_part1.txt day2_part2.txt day3_part1.txt)
+add_executable(day3_part2 day3_part2.cpp)
+target_link_libraries(day3_part2 PRIVATE aoc2021)
+add_custom_command(OUTPUT day3_part2.txt COMMAND ./day3_part2 >day3_part2.txt <${CMAKE_SOURCE_DIR}/data/day3.txt DEPENDS day3_part2)
+
+add_custom_target(answers ALL DEPENDS day1_part1.txt day1_part2.txt day2_part1.txt day2_part2.txt day3_part1.txt day3_part2.txt)

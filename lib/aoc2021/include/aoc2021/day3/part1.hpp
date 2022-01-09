@@ -1,5 +1,6 @@
 #pragma once
 
+#include "aoc2021/day3/operators.hpp"
 #include "aoc2021/read_vector.hpp"
 
 #include <array>
@@ -8,10 +9,6 @@
 #include <istream>
 
 namespace aoc2021::day3 {
-template <std::size_t bit_count>
-std::istream &operator>>(std::istream &in, std::bitset<bit_count> &d) {
-  return (in >> d.bits);
-}
 
 template <std::size_t bit_count> auto count_set_bits(const auto &reports) {
   std::array<std::size_t, bit_count> counts{};
