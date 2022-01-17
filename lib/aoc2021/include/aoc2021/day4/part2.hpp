@@ -7,21 +7,21 @@
 namespace aoc2021::day4 {
 
 auto part2(auto &in) {
-  bingo_numbers numbers{};
-  in >> numbers;
-  bingo_cards cards{};
-  in >> cards;
-  auto end = std::begin(numbers);
-  while (std::size(cards) > 1) {
-    std::erase_if(cards, [&](const auto &card) {
-      return is_winner(std::begin(numbers), end, card);
+  bingo_system bingo{};
+  in >> bingo;
+  const auto begin = std::begin(bingo.numbers);
+  auto end = begin;
+  while (std::size(bingo.cards) > 1) {
+    std::erase_if(bingo.cards, [&](const auto &card) {
+      return is_winner(begin, end, card);
     });
     ++end;
   }
-  while (not is_winner(std::begin(numbers), end, cards[0])) {
+  const auto &last_card = bingo.cards.front();
+  while (not is_winner(begin, end, last_card)) {
     ++end;
   }
-  return score_card(std::begin(numbers), end, cards[0]);
+  return score_card(begin, end, last_card);
 }
 
 } // namespace aoc2021::day4

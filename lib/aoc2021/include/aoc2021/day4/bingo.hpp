@@ -14,6 +14,11 @@ using bingo_numbers = std::vector<unsigned>;
 using bingo_card = std::array<unsigned, bingo_size * bingo_size>;
 using bingo_cards = std::vector<bingo_card>;
 
+struct bingo_system {
+  bingo_numbers numbers{};
+  bingo_cards cards{};
+};
+
 std::istream &operator>>(std::istream &is, bingo_numbers &numbers) {
   std::string line;
   std::getline(is, line);
@@ -40,6 +45,10 @@ std::istream &operator>>(std::istream &is, bingo_cards &cards) {
     cards.emplace_back(card);
   }
   return is;
+}
+
+std::istream &operator>>(std::istream &is, bingo_system &system) {
+  return (is >> system.numbers >> system.cards);
 }
 
 auto is_number_called(const auto begin, const auto end, const auto number) {

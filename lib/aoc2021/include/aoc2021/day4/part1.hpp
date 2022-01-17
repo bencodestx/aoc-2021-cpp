@@ -7,15 +7,14 @@
 namespace aoc2021::day4 {
 
 auto part1(auto &in) {
-  bingo_numbers numbers{};
-  in >> numbers;
-  bingo_cards cards{};
-  in >> cards;
-  auto end = std::begin(numbers);
+  bingo_system bingo{};
+  in >> bingo;
+  const auto begin = std::begin(bingo.numbers);
+  auto end = begin;
   while (true) {
-    for (const auto &card : cards) {
-      if (is_winner(std::begin(numbers), end, card)) {
-        return score_card(std::begin(numbers), end, card);
+    for (const auto &card : bingo.cards) {
+      if (is_winner(begin, end, card)) {
+        return score_card(begin, end, card);
       }
     }
     ++end;
