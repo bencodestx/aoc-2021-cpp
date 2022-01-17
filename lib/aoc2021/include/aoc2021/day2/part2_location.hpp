@@ -11,23 +11,28 @@ struct part2_location {
   int horizontal_position{};
   int aim{};
   int depth{};
+
+  part2_location forward(const auto distance) const {
+    return {.horizontal_position = horizontal_position + distance,
+            .aim = aim,
+            .depth = depth + distance * aim};
+  }
+
+  part2_location down(const auto distance) const {
+    return {.horizontal_position = horizontal_position,
+            .aim = aim + distance,
+            .depth = depth};
+  }
+
+  part2_location up(const auto distance) const {
+    return {.horizontal_position = horizontal_position,
+            .aim = aim - distance,
+            .depth = depth};
+  }
 };
 
 part2_location operator+(const part2_location &l, const instruction &i) {
-  if (i.direction == "forward") {
-    return {.horizontal_position = l.horizontal_position + i.distance,
-            .aim = l.aim,
-            .depth = l.depth + i.distance * l.aim};
-  } else if (i.direction == "down") {
-    return {.horizontal_position = l.horizontal_position,
-            .aim = l.aim + i.distance,
-            .depth = l.depth};
-  } else if (i.direction == "up") {
-    return {.horizontal_position = l.horizontal_position,
-            .aim = l.aim - i.distance,
-            .depth = l.depth};
-  }
-  throw std::runtime_error(std::string{"Invalid direction: "} + i.direction);
+  return i.apply_to_location(l);
 }
 
 } // namespace aoc2021::day2
