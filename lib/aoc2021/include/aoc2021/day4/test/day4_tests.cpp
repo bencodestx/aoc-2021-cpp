@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "aoc2021/day4/part1.hpp"
+#include "aoc2021/day4/part2.hpp"
 
 static constexpr auto sample =
     R"(7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
@@ -81,4 +82,11 @@ TEST(Day4, Part1) {
 
   EXPECT_EQ(4512, part1(in));
 }
+
+TEST(Day4, Part2) {
+  std::stringstream in{sample};
+
+  EXPECT_EQ(1924, part2(in));
+}
+
 } // namespace aoc2021::day4
