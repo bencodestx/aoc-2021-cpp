@@ -30,11 +30,11 @@ template <std::size_t bit_count, typename Comparison> auto rating(auto values) {
     }
     const auto count =
         count_bits_in_position<bit_count>(bit_count - bit - 1, values);
-    int value_to_erase;
+    bool value_to_erase;
     if (comparison(count, std::size(values) - count)) {
-      value_to_erase = 0;
+      value_to_erase = false;
     } else {
-      value_to_erase = 1;
+      value_to_erase = true;
     }
     std::erase_if(values, [&](const auto &x) {
       return x[bit_count - bit - 1] == value_to_erase;

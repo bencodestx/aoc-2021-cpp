@@ -1,5 +1,7 @@
 # Build Artifacts
 .build-*/
+out/
+.vs/
 
 # Prerequisites
 *.d
